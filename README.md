@@ -51,5 +51,6 @@ Figma：https://www.figma.com/design/UMn6QEW28fiYXKHVa8SbMi/Untitled?node-id=0-1
 - [x] 異常値検知（心拍数）  
 <br>  
 ### ER図  
-https://drive.google.com/file/d/1F67qDpe38e0mCpme2DoIlTHbOx2tGzr0/view?usp=sharing  
+https://drive.google.com/file/d/1F67qDpe38e0mCpme2DoIlTHbOx2tGzr0/view?usp=sharing　　
+
 
