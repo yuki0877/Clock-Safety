@@ -89,7 +89,6 @@ GEM
     mini_mime (1.1.5)
     minitest (5.24.1)
     msgpack (1.7.2)
-    mysql2 (0.5.6)
     net-imap (0.4.14)
       date
       net-protocol
@@ -107,6 +106,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.9)
+    rack-cors (2.0.2)
+      rack (>= 2.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (6.1.7.8)
@@ -165,9 +166,9 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   listen (~> 3.3)
-  mysql2 (~> 0.5)
   pg
   puma (~> 5.0)
+  rack-cors
   rails (~> 6.1.7, >= 6.1.7.8)
   spring
   tzinfo-data
