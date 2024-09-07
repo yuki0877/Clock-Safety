@@ -9,6 +9,7 @@ gem 'rails', '~> 6.1.7', '>= 6.1.7.8'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
+gem "rails-i18n"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
@@ -30,6 +31,7 @@ gem 'pg'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
 
 end
 
