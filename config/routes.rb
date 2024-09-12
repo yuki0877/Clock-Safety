@@ -6,6 +6,8 @@ Rails.application.routes.draw do
         resource :users, only: %i[create update]
         resource :authenticates, only: %i[show]
         resources :anomalies, only: %i[create index]
+        resources :demo_anomalies, only: %i[index]
+        resources :demo_healths, only: %i[index]
       end
     end
 end

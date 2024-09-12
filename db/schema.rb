@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_31_184823) do
+ActiveRecord::Schema.define(version: 2024_09_12_090408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,38 @@ ActiveRecord::Schema.define(version: 2024_08_31_184823) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_anomalies_on_user_id"
+  end
+
+  create_table "demo_anomalies", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "max"
+    t.integer "min"
+    t.datetime "abnormal_day"
+    t.string "anomaly_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_demo_anomalies_on_user_id"
+  end
+
+  create_table "demo_heat_rates", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "avg_heart_rate"
+    t.integer "max_heart_rate"
+    t.integer "min_heart_rate"
+    t.date "action_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_demo_heat_rates_on_user_id"
+  end
+
+  create_table "demo_sleeps", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "sleep_time"
+    t.integer "sleep_score"
+    t.date "action_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_demo_sleeps_on_user_id"
   end
 
   create_table "user_mails", force: :cascade do |t|
@@ -48,4 +80,7 @@ ActiveRecord::Schema.define(version: 2024_08_31_184823) do
   end
 
   add_foreign_key "anomalies", "users"
+  add_foreign_key "demo_anomalies", "users"
+  add_foreign_key "demo_heat_rates", "users"
+  add_foreign_key "demo_sleeps", "users"
 end
