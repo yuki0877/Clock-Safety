@@ -7,6 +7,5 @@ class Api::V1::DemoHealthsController < ApplicationController
           demo_sleeps: user.demo_sleeps.as_json,
           demo_heat_rates: user.demo_heat_rates.as_json,
         }
-        
     end
 end
