@@ -1,7 +1,7 @@
 class Api::V1::DemoHealthsController < ApplicationController
 
     def index
-        user = User.find_by(email: params[:email])
+        user = User.find_by(supabase_id: params[:id])
 
         render json: {
           demo_sleeps: user.demo_sleeps.as_json,

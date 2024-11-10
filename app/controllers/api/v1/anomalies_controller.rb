@@ -1,12 +1,13 @@
 class Api::V1::AnomaliesController < ApplicationController
   def index
-    @user = User.find_by(email: params[:email])
+    @user = User.find_by(supabase_id: params[:id])
 
     return unless @user
     anomalies = @user.anomalies
 
     render json: {
-      anomalies: anomalies.as_json()
+      anomalies: anomalies.as_json(),
+      current_user: @user.as_json()
     }
 
     

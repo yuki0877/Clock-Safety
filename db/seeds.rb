@@ -1,7 +1,8 @@
 
-user = User.find_or_create_by!(email: "akemi.sample.1203@gmail.com") do |user|
-  user.email = "akemi.sample.1203@gmail.com"
-  user.name = "あけみ"
+user = User.find_or_create_by!(email: "mark_8556@yahoo.co.jp") do |user|
+  user.email = "mark_8556@yahoo.co.jp"
+  user.name = "ゲスト様"
+  user.supabase_id = "12f86d95-2778-4cb8-b155-42fe2e02938b"
 end
 
 def random_past_date
