@@ -1,0 +1,47 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:13  # 使用するPostgreSQLのバージョン
+        env:
+          POSTGRES_USER: postgres  # PostgreSQLのユーザー名
+          POSTGRES_PASSWORD: password  # PostgreSQLのパスワード
+          POSTGRES_DB: your_database  # 使用するデータベース名
+        ports:
+          - 5432:5432  # ポートの設定
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.2
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Set up the database
+        run: |
+          cp config/database.yml.github_actions config/database.yml  # CI用設定をコピー
+          RAILS_ENV=test rails db:create  # テストデータベースを作成
+          RAILS_ENV=test rails db:schema:load  # スキーマをロード
+
+      - name: Run RSpec tests
+        run: |
+          bundle exec rspec

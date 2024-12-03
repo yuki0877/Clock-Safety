@@ -1,11 +1,13 @@
-class Api::V1::DemoAnomaliesController < ApplicationController
+module Api
+  module V1
+    class DemoAnomaliesController < ApplicationController
+      def index
+        user = User.find_by(supabase_id: params[:id])
 
-    def index
-      user = User.find_by(email: params[:email])
-
-      render json: {
-        demo_anomalies: user.demo_anomalies.as_json,
-      }
-        
+        render json: {
+          demo_anomalies: user.demo_anomalies.as_json
+        }
+      end
     end
+  end
 end
