@@ -1,7 +1,9 @@
-class Api::V1::HealthScoresController < ApplicationController
-  def index
-  end
+module Api
+  module V1
+    class HealthScoresController < ApplicationController
+      def index; end
 
-  def show
+      def show; end
+    end
   end
 end

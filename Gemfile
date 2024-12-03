@@ -9,7 +9,7 @@ gem 'rails', '~> 6.1.7', '>= 6.1.7.8'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'rack-cors'
-gem "rails-i18n"
+gem 'rails-i18n'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
@@ -30,16 +30,28 @@ gem 'pg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 5.0'
+end
 
+group :test do
+  # Test data creation
+  gem 'factory_bot_rails'
+
+  # Random data generator
+  gem 'faker'
+
+  # Simplified test matchers for Rails
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rubocop', require: false # Rubocopを追加
   gem 'spring'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
