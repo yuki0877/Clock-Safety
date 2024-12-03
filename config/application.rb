@@ -40,5 +40,6 @@ module Myapp
     config.active_record.default_timezone = :local
     config.api_only = true
     config.middleware.use ActionDispatch::Cookies
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
