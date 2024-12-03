@@ -1,8 +1,28 @@
 AllCops:
   TargetRubyVersion: 3.0
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+    - 'bin/**/*'
+    - 'tmp/**/*'
 
-Metrics/LineLength:
-  Max: 120
+Layout/LineLength:
+  Enabled: false # 行の長さ制限を無効化
 
 Style/FrozenStringLiteralComment:
-  Enabled: false
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false # コメントを必須としない
+  Exclude:
+    - 'db/migrate/**/*'
+    - 'spec/**/*'
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+
+RSpec:
+  Enabled: true
