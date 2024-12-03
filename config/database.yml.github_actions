@@ -1,0 +1,7 @@
+test:
+  adapter: postgresql
+  database: your_database    # 使用するデータベース名
+  username: postgres         # PostgreSQLのユーザー名
+  password: password         # PostgreSQLのパスワード
+  host: 127.0.0.1            # GitHub Actions内で動作しているPostgreSQLは127.0.0.1で接続可能
+  port: 5432                 # PostgreSQLのポート番号
