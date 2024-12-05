@@ -30,3 +30,5 @@
 /vendor/bundle
 
 /config/credentials/development.key
+
+/config/credentials/production.key
