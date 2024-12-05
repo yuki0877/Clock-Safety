@@ -18,7 +18,7 @@ set :runner_command, "rails runner"
 
 ENV.each { |k, v| env(k, v) } #追加
 
-every 30.minute do
+every 1.minute do
   runner "Tasks::SendEmail.send_anomalies", environment: rails_env.to_sym
 end
 
