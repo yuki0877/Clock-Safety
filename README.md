@@ -5,12 +5,12 @@
 # 目次
 
 - [サービス概要](#サービス概要)
-- [サービス URL](#サービス-url)
+- [サービスURL](#サービスurl)
 - [サービス開発の背景](#サービス開発の背景)
 - [サービス紹介](#サービス紹介)
 - [使用技術](#使用技術)
 - [画面遷移図](#画面遷移図)
-- [ER 図](#er図)
+- [ER図](#er図)
 
 ---
 
@@ -20,7 +20,7 @@ Google スマートウォッチから得られる健康管理データを使用�
 スマートウォッチを付けて生活をしてもらい、web アプリ上で離れて暮らす高齢家族の日々の健康状態を確認することができます。  
 <br>
 
-##　 サービス URL
+##　 サービスURL
 サービスへのリンク: [Clock Safety](https://www.clock-safety.com/)
 
 こちらは「Clock Safety」のバックエンドのリポジトリになります。
@@ -111,6 +111,6 @@ Google スマートウォッチから得られる健康管理データを使用�
 [Figma リンクはこちら](https://www.figma.com/design/UMn6QEW28fiYXKHVa8SbMi/Untitled?node-id=0-1&t=PYdP1WfHSxMrE3SF-0)  
 <br>
 
-## ER 図
+## ER図
 
 [ER 図リンクはこちら](https://drive.google.com/file/d/1F67qDpe38e0mCpme2DoIlTHbOx2tGzr0/view?usp=sharing)
